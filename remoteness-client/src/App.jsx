@@ -1,11 +1,18 @@
 
-import './App.css';
+import './App.scss';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage'
+import LandscapePage from './pages/LandscapePage';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Hello Jo</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/landscape" element= {<LandscapePage/>} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
