@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Remoteness (UI for AI image generator)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link: http://www.remoteness.art
 
-## Available Scripts
+About: "remoteness, insularity, difficult topography" is an artistic work that consists of a GAN (Generative Adversarial Networks), fine-tuned Generative adversarial network (StyleGAN2), a website and a series of silkscreen prints. A data set was created from landscape photographs of travel destinations that were most frequently searched for in #stayathome spring 2020 when the home office became the new normal for many office workers. The model to a certain extent has learned to create images of longing. As non-nature, however, the ultimate disappointment remains inherent in the synthetic image. On a website visitors can generate their individual landscape background.
 
-In the project directory, you can run:
+You can issue a request to the trained model to generate a new image in real time, which is then stored in a DB. At the same time the oldest image in the DB is displayed to the user (and set to "isUsed" in DB).
 
-### `npm start`
+App using JavaScript, Handlebars, Express.js, Node.js, HTML, CSS, MongoDB, REST-API, StyleGAN2, RunwayML API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## CRUD
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Create
+- Read
+- Update
 
-### `npm test`
+## Archive generated images in Database
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Database: landscapes
 
-### `npm run build`
+Collection: landscapes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Each is going to render a view. One template per page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- / - Home page. Displays an empty frame, button, info-link
+- /landscape - displays fetched image from database
 
-### `npm run eject`
+### Route Handlers
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- GET - '/' - render Home page
+- POST - '/landscape'
+  - RunwayMLAPI call - generates new landscape image
+  - Landscape.findOneAndUpdate({ isUsed: false }, { isUsed: true}, { sort: { 'createdAt' : 1 } }) - fetches the oldest image from DB
+  - displays this image
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Models
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Landscape
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- image: {
+  type: String,
+  required: true }
+- isUsed: {
+  type: Boolean,
+  required: true }
