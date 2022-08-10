@@ -1,0 +1,8 @@
+{
+  "name": "remoteness",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "cd server-remoteness && npm run start",
+    "prepare": "cd server-remotemess && npm i"
+  }
+}
