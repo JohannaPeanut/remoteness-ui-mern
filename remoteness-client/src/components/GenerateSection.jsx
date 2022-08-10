@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { createNewLandscape } from "./../services/landscape";
 import { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 
 import "./GenerateSection.scss";
 
@@ -41,22 +41,21 @@ const GenerateSection = ({
         </p>
       </div>
       <div className="center">
-        {!isGenerated && (
+        {!isGenerated && !isLoading && (
           <button className="btn oleo" onClick={generateLandscape}>
             Generate
           </button>
         )}
       </div>
       <div className="center">
-        {!isGenerated ? (
-          <div className="imageFrame"></div>
-        ) : (
-          <img
-            className="imageFrame"
-            src={landscape}
-            alt="AI generated landscape"
-          />
-        )}
+        {(!isGenerated && !isLoading && <div className="imageFrame"></div>) ||
+          (!isLoading && (
+            <img
+              className="imageFrame"
+              src={landscape}
+              alt="AI generated landscape"
+            />
+          )) || <div id="loading"></div>}
       </div>
 
       {isGenerated && (
@@ -71,16 +70,21 @@ const GenerateSection = ({
             </a>
           </div>
           <div className="center">
-            <button onClick={onChangeHelpDiv} className="help-btn">
+            <HashLink
+              smooth
+              to="/#help-div"
+              onClick={onChangeHelpDiv}
+              className="help-btn"
+            >
               ?
-            </button>
+            </HashLink>
           </div>
         </>
       )}
 
-      <Link to="/" className="arrow center">
+      <HashLink smooth to="/#gallery-section" className="arrow center">
         <BiDownArrowAlt />
-      </Link>
+      </HashLink>
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import Navbar from "./../components/Navbar";
 import { BiDownArrowAlt } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import "./HeaderSection.scss";
 
@@ -17,12 +17,12 @@ const HeaderSection = () => {
           .art
         </h1>
 
-        <Link to="/" className="btn oleo">
+        <HashLink smooth to="/#generate-section" className="btn oleo">
           Generate
-        </Link>
-        <Link to="/" className="arrow">
+        </HashLink>
+        <HashLink smooth to="/#about-section" className="arrow">
           <BiDownArrowAlt />
-        </Link>
+        </HashLink>
       </div>
     </section>
   );

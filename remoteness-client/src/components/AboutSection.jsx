@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { BiDownArrowAlt } from "react-icons/bi";
+import { HashLink } from "react-router-hash-link";
 
 import "./AboutSection.scss";
 
@@ -19,21 +20,19 @@ const AboutSection = () => {
         </p>
       </div>
       <div className="center">
-        <Link
-          to={{
-            pathname:
-              "http://start.johannamichel.com/remoteness-insularity-difficult-topography/",
-          }}
+        <a
+          href="http://start.johannamichel.com/remoteness-insularity-difficult-topography/"
           target="_blank"
           className="btn no-outline"
+          rel="noreferrer"
         >
           Read more
-        </Link>
+        </a>
       </div>
       <div className="center">
-        <Link to="/" className="arrow">
+        <HashLink smooth to="/#generate-section" className="arrow">
           <BiDownArrowAlt />
-        </Link>
+        </HashLink>
       </div>
     </section>
   );
