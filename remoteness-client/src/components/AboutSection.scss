@@ -1,0 +1,23 @@
+@use "./../utils/variables.scss" as v;
+
+#about-section {
+  justify-content: space-between;
+  flex-grow: 1;
+
+  p {
+    margin-top: 2.2rem;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .arrow {
+    margin-bottom: 3rem;
+  }
+
+  .no-outline {
+    background-color: v.$second-color;
+  }
+}

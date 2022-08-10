@@ -1,0 +1,21 @@
+@use "./../utils/variables.scss" as v;
+
+#gallery-section {
+  background-color: v.$second-color;
+  justify-content: space-around;
+  align-items: center;
+
+  .share-link {
+    position: absolute;
+    right: 3rem;
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  img {
+    margin-top: 4rem;
+    height: 30rem;
+    object-fit: contain;
+    transform: rotate(8.9deg);
+  }
+}

@@ -1,0 +1,12 @@
+@use "./../utils/variables.scss" as v;
+
+#generate-section {
+  background-image: v.$gradient;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+
+  p {
+    margin-top: 2.2rem;
+  }
+}
