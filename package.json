@@ -2,7 +2,7 @@
   "name": "remoteness",
   "version": "0.0.1",
   "scripts": {
-    "start": "cd server-remoteness && npm run start",
-    "prepare": "cd server-remotemess && npm i"
+    "start": "cd remoteness-server && npm run start",
+    "prepare": "cd remoteness-server && npm i"
   }
 }
