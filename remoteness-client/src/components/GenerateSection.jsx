@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { createNewLandscape } from "./../services/landscape";
+import { useState } from "react";
 
 import "./GenerateSection.scss";
 
@@ -11,10 +12,17 @@ const GenerateSection = ({
   onIsGeneratedChange,
   onChangeHelpDiv,
 }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const generateLandscape = () => {
     createNewLandscape().then((newDoc) => {
-      onLandscapeChange(newDoc.data.displayedLandscape.image);
-      onIsGeneratedChange(true);
+      setIsLoading(true);
+      // imitating the API loading time with setInterval
+      setInterval(() => {
+        onLandscapeChange(newDoc.data.displayedLandscape.image);
+        onIsGeneratedChange(true);
+        setIsLoading(false);
+      }, 1500);
     });
   };
 
