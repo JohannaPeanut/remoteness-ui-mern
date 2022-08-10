@@ -32,36 +32,45 @@ const GenerateSection = ({
             : "A unique landscape, an ideal background can be generated for you..."}
         </p>
       </div>
-      {!isGenerated && (
-        <button className="btn oleo" onClick={generateLandscape}>
-          Generate
-        </button>
-      )}
-      {!isGenerated ? (
-        <div className="imageFrame"></div>
-      ) : (
-        <img
-          className="imageFrame"
-          src={landscape}
-          alt="AI generated landscape"
-        />
-      )}
+      <div className="center">
+        {!isGenerated && (
+          <button className="btn oleo" onClick={generateLandscape}>
+            Generate
+          </button>
+        )}
+      </div>
+      <div className="center">
+        {!isGenerated ? (
+          <div className="imageFrame"></div>
+        ) : (
+          <img
+            className="imageFrame"
+            src={landscape}
+            alt="AI generated landscape"
+          />
+        )}
+      </div>
+
       {isGenerated && (
         <>
-          <a
-            href={landscape}
-            className="btn oleo"
-            download="my-unique-landscape.jpg"
-          >
-            Download
-          </a>
-          <button onClick={onChangeHelpDiv} className="help-btn">
-            ?
-          </button>
+          <div className="center">
+            <a
+              href={landscape}
+              className="btn oleo"
+              download="my-unique-landscape.jpg"
+            >
+              Download
+            </a>
+          </div>
+          <div className="center">
+            <button onClick={onChangeHelpDiv} className="help-btn">
+              ?
+            </button>
+          </div>
         </>
       )}
 
-      <Link to="/" className="arrow">
+      <Link to="/" className="arrow center">
         <BiDownArrowAlt />
       </Link>
     </section>

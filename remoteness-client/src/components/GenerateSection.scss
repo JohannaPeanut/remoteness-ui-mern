@@ -3,10 +3,20 @@
 #generate-section {
   background-image: v.$gradient;
   justify-content: space-between;
-  align-items: center;
   flex-grow: 1;
+  min-height: 53rem;
 
   p {
     margin-top: 2.2rem;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
   }
 }

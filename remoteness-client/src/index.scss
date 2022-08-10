@@ -56,10 +56,15 @@ code {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  max-height: 60rem;
 }
 
 .imageFrame {
   border: 5px solid #ffffff;
   width: 95vw;
   height: 95vw;
+  @media (min-width: 800px) {
+    width: 500px;
+    height: 500px;
+  }
 }
