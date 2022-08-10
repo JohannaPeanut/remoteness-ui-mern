@@ -6,7 +6,7 @@ About: "remoteness, insularity, difficult topography" is an artistic work that c
 
 You can issue a request to the trained model to generate a new image in real time, which is then stored in a DB. At the same time the oldest image in the DB is displayed to the user (and set to "isUsed" in DB).
 
-App using JavaScript, Handlebars, Express.js, Node.js, HTML, CSS, MongoDB, REST-API, StyleGAN2, RunwayML API
+App using React.js, Express.js, Node.js, HTML, SCSS, MongoDB, REST-API, StyleGAN2, RunwayML API
 
 ## CRUD
 
@@ -17,23 +17,20 @@ App using JavaScript, Handlebars, Express.js, Node.js, HTML, CSS, MongoDB, REST-
 ## Archive generated images in Database
 
 Database: landscapes
-
 Collection: landscapes
 
 ### Pages
 
-Each is going to render a view. One template per page.
-
-- / - Home page. Displays an empty frame, button, info-link
-- /landscape - displays fetched image from database
+- / - Home page. Displays an empty frame / generated image, generate-button / download-button, info-link
+- /gallery - displays a selection of random genrated landscapes from database
 
 ### Route Handlers
 
-- GET - '/' - render Home page
-- POST - '/landscape'
+- GET - '/landscape'
   - RunwayMLAPI call - generates new landscape image
   - Landscape.findOneAndUpdate({ isUsed: false }, { isUsed: true}, { sort: { 'createdAt' : 1 } }) - fetches the oldest image from DB
-  - displays this image
+- GET - '/random-landscapes'
+  - Landscape.find --> 10 landscapes with isUsed true and isGallery true
 
 ### Models
 
@@ -45,3 +42,5 @@ Landscape
 - isUsed: {
   type: Boolean,
   required: true }
+- isGallery: {
+  type: Boolean }
