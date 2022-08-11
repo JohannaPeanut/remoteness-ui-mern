@@ -1,3 +1,4 @@
+import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 
 import "./Navbar.scss";
@@ -8,7 +9,9 @@ const Navbar = () => {
       <ul>
         <div id="about-nav-links">
           <li>
-            <Link to="/">About</Link>
+            <HashLink smooth to="/#about-section">
+              About
+            </HashLink>
           </li>
           <li>
             <Link to="/gallery">Gallery</Link>
@@ -16,9 +19,14 @@ const Navbar = () => {
         </div>
         <div>
           <li>
-            <Link className="oleo" id="generate-nav-link" to="/">
+            <HashLink
+              smooth
+              className="oleo"
+              id="generate-nav-link"
+              to="/#generate-section"
+            >
               Generate Landscape
-            </Link>
+            </HashLink>
           </li>
         </div>
       </ul>

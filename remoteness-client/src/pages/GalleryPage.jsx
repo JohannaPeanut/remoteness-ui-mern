@@ -18,15 +18,23 @@ const GalleryPage = () => {
   }, []);
 
   return (
-    <div>
-      <Navbar />
-      <div className="imageFrame">
-        {currentImage && <img src={currentImage} alt="" />}
+    <div id="gallery-page">
+      <div id="top-gallery" className="section">
+        <Navbar />
+        <div className="center">
+          {(!currentImage && <div className="imageFrame"></div>) || (
+            <img
+              className="imageFrame"
+              src={currentImage}
+              alt="AI generated landscape"
+            />
+          )}
+        </div>
+        <p className="small-paragraph">
+          These are other people’s individually generated backgrounds. Do not
+          steal. Generate your own landscape <Link to="/">here.</Link>
+        </p>
       </div>
-      <p>
-        These are other people’s individually generated backgrounds. Do not
-        steal. Generate your own landscape <Link to="/">here.</Link>
-      </p>
       <Footer />
     </div>
   );

@@ -1,1 +1,21 @@
+@use "./../utils/variables.scss" as v;
 
+#gallery-page {
+  background-image: v.$gradient;
+
+  #top-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .small-paragraph {
+    font-size: 1rem;
+  }
+}

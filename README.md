@@ -8,13 +8,13 @@ You can issue a request to the trained model to generate a new image in real tim
 
 App using React.js, Express.js, Node.js, HTML, SCSS, MongoDB, REST-API, StyleGAN2, RunwayML API
 
-## CRUD
+### CRUD
 
 - Create
 - Read
 - Update
 
-## Archive generated images in Database
+### Archive generated images in Database
 
 Database: landscapes
 Collection: landscapes
