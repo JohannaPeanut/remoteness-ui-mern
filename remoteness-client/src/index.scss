@@ -57,6 +57,7 @@ code {
   display: flex;
   flex-direction: column;
   max-height: 60rem;
+  min-height: fit-content;
 }
 
 .imageFrame {
@@ -71,4 +72,13 @@ code {
 
 .arrow {
   color: black;
+}
+
+.filtered {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.rotated {
+  transform: rotate(180deg);
 }

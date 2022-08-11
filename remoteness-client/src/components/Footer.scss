@@ -5,6 +5,11 @@ footer {
   display: flex;
   justify-content: space-between;
   background-color: white;
+  max-height: fit-content;
+
+  a {
+    color: black;
+  }
 
   p {
     font-family: Roboto, sans-serif;

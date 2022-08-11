@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BiArrowBack } from "react-icons/bi";
 import ReactSimplyCarousel from "react-simply-carousel";
 
 const Carousel = ({ images }) => {
@@ -7,6 +8,8 @@ const Carousel = ({ images }) => {
   return (
     <div>
       <ReactSimplyCarousel
+        // autoplay
+        // infinite
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}
         itemsToShow={1}
@@ -15,7 +18,7 @@ const Carousel = ({ images }) => {
           //here you can also pass className, or any other button element attributes
           style: {
             alignSelf: "center",
-            background: "white",
+            background: "transparent",
             border: "none",
             borderRadius: "50%",
             color: "black",
@@ -26,13 +29,13 @@ const Carousel = ({ images }) => {
             textAlign: "center",
             width: 30,
           },
-          children: <span>{`>`}</span>,
+          children: <BiArrowBack className="rotated" />,
         }}
         backwardBtnProps={{
           //here you can also pass className, or any other button element attributes
           style: {
             alignSelf: "center",
-            background: "white",
+            background: "transparent",
             border: "none",
             borderRadius: "50%",
             color: "black",
@@ -43,39 +46,18 @@ const Carousel = ({ images }) => {
             textAlign: "center",
             width: 30,
           },
-          children: <span>{`<`}</span>,
+          children: <BiArrowBack />,
         }}
-        responsiveProps={[
-          {
-            itemsToShow: 2,
-            itemsToScroll: 2,
-            minWidth: 768,
-          },
-        ]}
-        speed={400}
+        speed={1500}
         easing="linear"
       >
-        {/* here you can also pass any other element attributes. Also, you can use your custom components as slides */}
-        <img
-          className="imageFrame"
-          src={images[0].image}
-          alt="AI generated landscape"
-        />
-        <img
-          className="imageFrame"
-          src={images[1].image}
-          alt="AI generated landscape"
-        />
-        <img
-          className="imageFrame"
-          src={images[2].image}
-          alt="AI generated landscape"
-        />
-        <img
-          className="imageFrame"
-          src={images[3].image}
-          alt="AI generated landscape"
-        />
+        {images.map((img) => (
+          <img
+            className="imageFrame"
+            src={img.image}
+            alt="AI generated landscape"
+          />
+        ))}
       </ReactSimplyCarousel>
     </div>
   );
