@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { useEffect, useState } from "react";
 import Navbar from "./../components/Navbar";
 import Footer from "./../components/Footer";
@@ -37,7 +37,8 @@ const GalleryPage = () => {
         </div>
         <p className="small-paragraph">
           These are other people’s individually generated backgrounds. Do not
-          steal. Generate your own landscape <Link to="/">here.</Link>
+          steal. Generate your own landscape{" "}
+          <HashLink to="/#generate-section">here.</HashLink>
         </p>
       </div>
       <Footer />
