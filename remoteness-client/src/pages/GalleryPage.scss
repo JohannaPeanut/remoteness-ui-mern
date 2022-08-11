@@ -3,6 +3,12 @@
 #gallery-page {
   background-image: v.$gradient;
 
+  h3 {
+    color: white;
+    font-size: 3.5rem;
+    margin: 0 auto;
+  }
+
   #top-gallery {
     display: flex;
     flex-direction: column;
@@ -17,5 +23,9 @@
 
   .small-paragraph {
     font-size: 1rem;
+    a {
+      color: black;
+      text-decoration: underline;
+    }
   }
 }
