@@ -14,7 +14,7 @@ const Navbar = () => {
             </HashLink>
           </li>
           <li>
-            <Link to="/gallery">Gallery</Link>
+            <Link to="/#gallery-page">Gallery</Link>
           </li>
         </div>
         <div>
