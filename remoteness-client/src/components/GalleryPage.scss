@@ -19,10 +19,12 @@
   .center {
     display: flex;
     justify-content: center;
+    margin-bottom: 7rem;
   }
 
   .small-paragraph {
     font-size: 1rem;
+    margin-top: -3rem;
     a {
       color: black;
       text-decoration: underline;

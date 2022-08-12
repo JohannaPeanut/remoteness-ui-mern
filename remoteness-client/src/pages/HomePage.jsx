@@ -3,6 +3,7 @@ import HeaderSection from "./../components/HeaderSection";
 import AboutSection from "../components/AboutSection";
 import GenerateSection from "../components/GenerateSection";
 import GallerySection from "../components/GallerySection";
+import GalleryPage from "../components/GalleryPage";
 import Footer from "./../components/Footer";
 
 import "./HomePage.scss";
@@ -35,6 +36,7 @@ const HomePage = () => {
         </div>
       )}
       <GallerySection />
+      <GalleryPage />
 
       <Footer />
     </div>

@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import { BiDownArrowAlt } from "react-icons/bi";
 
 import "./GallerySection.scss";
 
@@ -12,9 +13,14 @@ const GallerySection = () => {
       <h2 className="share-link oleo" to="/">
         enjoy your remoteness!
       </h2>
-      <Link to="/gallery" className="btn no-outline">
+      {/* <Link to="/gallery" className="btn no-outline">
         Gallery
-      </Link>
+      </Link> */}
+      <div className="center">
+        <HashLink smooth to="/#gallery-page" className="arrow">
+          <BiDownArrowAlt />
+        </HashLink>
+      </div>
     </section>
   );
 };
