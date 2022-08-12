@@ -8,15 +8,13 @@ const AboutSection = () => {
   return (
     <section className="section" id="about-section">
       <div>
-        <h1 className="oleo">Work in a unique landscape!</h1>
+        <h1 className="oleo">Work where other people go on vacation?</h1>
 
         <p>
-          A data set was created from landscape photographs of travel
-          destinations that were most frequently searched for in Corona spring
-          2020 when the home office and video calls became the new normal for
-          many office workers. An AI has learned to create images of longing. On
-          <i>remoteness.art</i> you can get your individual AI generated
-          landscape background.
+          On <i>remoteness.art</i> you can create a unique landscape background
+          for your next video call. The AI generates these images based on a
+          dataset of the most popular travel destination backgrounds in Corona
+          spring 2020 when remote work became the new normal.
         </p>
       </div>
       <div className="center">

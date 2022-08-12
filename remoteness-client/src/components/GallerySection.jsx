@@ -9,6 +9,9 @@ const GallerySection = () => {
       {/* <Link className="share-link oleo" to="/">
         Share
       </Link> */}
+      <h2 className="share-link oleo" to="/">
+        enjoy your remoteness!
+      </h2>
       <Link to="/gallery" className="btn no-outline">
         Gallery
       </Link>
